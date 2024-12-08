@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';">
+    <title>Blockchain Course Enrollment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Blockchain Course Enrollment</h1>
+    <nav>
+    <a href="{{ url_for('welcome') }}">Welcome</a> |
+    <a href="{{ url_for('homepage') }}">Home</a> |
+    <a href="{{ url_for('create_course') }}">Create Course</a> |
+    <a href="{{ url_for('enroll') }}">Enroll in Course</a> |
+    <a href="{{ url_for('course_details') }}">Course Details</a>
+</nav>
+
+</header>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+<footer>
+    <p>20245424 Blockchain Course Enrollment System</p>
+</footer>
+</body>
+</html>

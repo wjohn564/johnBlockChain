@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Course Details</h2>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    {% if course %}
+        <h3>Details for Course ID: {{ course.courseId }}</h3>
+        <p><strong>Name:</strong> {{ course.name }}</p>
+        <p><strong>Seats Available:</strong> {{ course.availableSeats }}</p>
+    {% endif %}
+    <form method="GET" action="{{ url_for('routes.course_details') }}">
+        <label for="courseId">Course ID:</label><br>
+        <input type="text" id="courseId" name="courseId" required><br>
+        <button type="submit">Get Details</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Enroll in a Course</h2>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+        <p style="color:green;">{{ success }}</p>
+        <p>Response: {{ response }}</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('routes.enroll') }}">
+        <label for="courseId">Course ID:</label><br>
+        <input type="text" id="courseId" name="courseId" required><br>
+        <label for="studentAddress">Student Address:</label><br>
+        <input type="text" id="studentAddress" name="studentAddress" required><br>
+        <button type="submit">Enroll</button>
+    </form>
+{% endblock %}
