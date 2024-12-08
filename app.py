@@ -1,12 +1,11 @@
 from flask import Flask
+from logic.routes import routes
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
-
+# Register the routes blueprint
+app.register_blueprint(routes)
 
 if __name__ == '__main__':
-    app.run()
+    print("Starting Flask app...")
+    app.run(debug=True)
